@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o conteúdo do meu site */
+
+html, body{
+    height: 100%;
+}
+
+.artigo{
+    width: 4%;
+    background-color: rgb(200,200,200);
+    text-align: center;
+}
+
+.artigo > h1{
+    color: rgb(66, 149, 244);
+    font-size: 23px; /* 1em -> 100% */
+    font-style: normal;
+    font-weight: normal;
+    /*font-variant: small-caps;*/
+}
+
+.artigo > p{
+    color: #636262;
+    text-align: left;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 30px; /* Espaço entre cada espaço de linha */
+    margin-top: 12px;
+}
