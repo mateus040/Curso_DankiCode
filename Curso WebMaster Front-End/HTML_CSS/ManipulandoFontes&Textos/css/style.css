@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o conteúdo do meu site */
+
+.artigo{
+    width: 1280px;
+    background-color: rgb(200,200,200);
+    margin: 40px auto;
+    text-align: center;
+}
+
+.artigo > h1{
+    color: rgb(66, 149, 244);
+    font-size: 23px; /* 1em -> 100% */
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bold;
+    /*font-variant: small-caps;*/
+}
+
+.artigo > p{
+    color: #636262;
+    text-align: left;
+    font-size: 17px;
+    font-family: 'Tahoma';
+    font-style: normal;
+    font-weight: bold;
+    line-height: 30px; /* Espaço entre cada espaço de linha */
+    margin-top: 12px;
+}
