@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+.box, .box2{
+    width: 300px;
+    margin: 0 auto;
+    background: gray;
+    /*
+    overflow-y: auto; /* barra de rolagem */
+}
+
+.box p, .box2 p{
+    width: 100%;
+}
+
+.box2{
+    background-color: red;
+    display: block;
+}
