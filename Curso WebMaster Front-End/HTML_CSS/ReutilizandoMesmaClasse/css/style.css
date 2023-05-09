@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.tipo1{
+    color: rgb(100,100,100);
+}
+
+.tipo2{
+    font-size: 40px;
+}
+
+a.link_{ /* Mais específico */
+    font-size: 30px;
+}
+
