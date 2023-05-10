@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+.teste, .teste1, .teste2{
+    width: 300px;
+    height: 30px;
+    /*background-color: #ccc;*/
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.teste1{
+    background-color: rgb(98,98,98);
+}
+
+.teste2{
+    background-color: rgb(50,50,50);
+}
+
+/*
+.teste:hover{ /* quando passar o mouse por cima 
+    background-color: blue;
+    height: 900px;
+}
+
+.teste:hover, .teste1, .teste2{
+    vertical-align: top;
+}
+*/
+
+/*
+.teste:active{ /* quando manter o mouse pressionado 
+    background-color: black;
+}
+
+*/
+
+/*.teste:focus{ /* quando clicar no input (formulário) 
+    background-color: red;
+}*/
+
+/*
+.link1:visited{ /* quando for visitado 
+    color: red;
+}*/
+
+/*.link1:link{
+    color: orange;
+}*/
