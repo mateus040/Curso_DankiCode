@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Importando da própia pasta */
+@font-face{
+    font-family: "Open sans";
+    src: url('../fonts/OpenSans-Light.ttf');
+}
+
+html,body{
+    height: 100%;
+    font-family: "Open sans";
+}
+
+form > *{ /* * -> pegar todos os elementos dentro do formulário */
+    font-family: "Open sans";
+}
+
+
+/*
+h2{
+    font-weight: 700;
+    font-family: "Minha fonte";
+}
+*/
+
+.box p{
+    font-family: "Open sans";
+}
+
+.text{
+    font-family: 'Tahoma' !important; /* !important -> coloca como prioridade */
+}
