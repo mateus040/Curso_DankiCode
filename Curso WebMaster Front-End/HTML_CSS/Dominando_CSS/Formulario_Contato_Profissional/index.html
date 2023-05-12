@@ -17,23 +17,23 @@
             <div><input type="text" name="email" placeholder="Digite seu e-mail" /></div>
             <div>
                 <select name="lista">
-                    <option>Qual sua idade?</option>
-                    <option>20</option>
-                    <option>20+</option>
-                    <option>40+</option>
+                    <option disabled selected>Qual sua idade?</option>
+                    <option value="20">20</option>
+                    <option value="25+">25+</option>
+                    <option value="40+">40+</option>
                 </select>
             </div>
 
             <h2>Qual sua cidade?</h2>
             <div class="input">
                 <div>
-                    <input type="radio" name="cidade" value="" /><span>Jaú</span>
+                    <input type="radio" name="cidade[]" value="Jaú" /><span>Jaú</span>
                 </div>
                 <div>
-                    <input type="radio" name="cidade" value="" /><span>Bauru</span>
+                    <input type="radio" name="cidade[]" value="Bauru" /><span>Bauru</span>
                 </div>
                 <div>
-                    <input type="radio" name="cidade" value="" /><span>Bariri</span>
+                    <input type="radio" name="cidade[]" value="Bariri" /><span>Bariri</span>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
             </div>
 
             <div>
-                <textarea placeholder="Possui alguma observação?"></textarea>
+                <textarea name="observacao" placeholder="Possui alguma observação?"></textarea>
             </div>
 
             <div>
