@@ -1,0 +1,7 @@
+Instalação Firebase
+
+npm install -g firebase-tools
+
+Resolver erro de scripts: Set-ExecutionPolicy RemoteSigned (abrir PowerShell como administrador)
+
+firebase login (fazer login no firebase)
