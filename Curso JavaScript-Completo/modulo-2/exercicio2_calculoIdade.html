@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Idade</title>
+
+    <script>
+
+        var ano_nascimento = prompt("Por favor, informe o ano do seu nascimento");
+
+        while(ano_nascimento >= 2023)
+        {
+            alert('Por favor informe seu ano de nascimento corretamente!');
+            ano_nascimento = prompt("Por favor, informe o ano do seu nascimento");
+        }
+
+        var ano_atual = prompt("E qual o ano atual?");
+
+        var idadeFinal = ano_atual - ano_nascimento;
+
+        alert('A idade final é: ' + idadeFinal);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
