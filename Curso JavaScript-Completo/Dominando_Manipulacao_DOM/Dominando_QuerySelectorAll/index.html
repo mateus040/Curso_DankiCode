@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominando querySelectorAll</title>
+</head>
+<body>
+
+    <div class="testes">
+        <div class="inside-testes">Texto</div>
+    </div>
+    
+    <div class="testes">
+        <div class="inside-testes">Texto2</div>
+    </div>
+
+    <script>
+
+        var els = document.querySelectorAll('.testes .inside-testes');
+        els[0].innerHTML = '<div class="inside-testes-via-js">Oi</div>'
+        els[0].style.color = 'red'; // Aplicando cor em um dos elementos
+
+    </script>
+
+    
+</body>
+</html>
