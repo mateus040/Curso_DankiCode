@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando CSS através da Classe</title>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script src="script.js">
+
+        var elementos = document.getElementsByClassName('box');
+
+        for (var i = 0; i < elementos.length; i++) {
+            
+            var el = elementos[i];
+
+            el.style.width = 100;
+            el.style.height = 100;
+            el.style.backgroundColor = 'red';
+            el.style.marginLeft = 200;
+        }
+
+    </script>
+
+</body>
+
+</html>
