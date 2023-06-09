@@ -8,7 +8,7 @@
 
     <script>
 
-        var date = new Date();
+        //var date = new Date();
         //alert(date.getDate()); // Pegando dia do mês atual
 
         //alert(date.getDay()) // Pegando o dia da semana atual
@@ -17,7 +17,22 @@
 
         //alert(date.getHours()) // Pegando hora atual
 
-        alert(date.getMinutes()) // Pegando minuto atual
+        //alert(date.getMinutes()) // Pegando minuto atual
+
+        /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+        /* Mais sobre datas */
+        var date = new Date('11/08/2020'); // Data pré-definida
+
+        //alert(date.getDate());
+
+        // Calculando diferença de datas
+        var date2 = new Date('11/10/2020');
+
+        //alert(date.getTime()); // Representação da data em milisegundos
+
+        var diferenca = (date2.getTime() - date.getTime()) / (1000 * 3600 * 24); // Transformar milisegundos em dias
+        alert(diferenca);
 
     </script>
 
