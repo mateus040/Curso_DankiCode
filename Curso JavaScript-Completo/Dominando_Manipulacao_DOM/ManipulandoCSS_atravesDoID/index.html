@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando CSS através do ID</title>
+</head>
+<body>
+
+    <div id="box">
+        <h1>Olá</h1>
+    </div>
+
+    <script>
+        var el = document.getElementById('box'); // Buscando pelo ID
+        // Manipulando CSS pelo JS
+        el.style.width = 100; 
+        el.style.height = 100;
+        el.style.backgroundColor = 'red';
+        el.style.marginLeft = 200;
+    </script>
+    
+</body>
+</html>
