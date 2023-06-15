@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest & Spread</title>
+</head>
+<body>
+
+    <script>
+
+        // Spread
+        var nomes = [
+            {
+                nome:'Mateus'
+            },
+            {
+                nome:'Larissa'
+            }
+        ]
+
+        // Adicionando os nomes da variável nome no início da constante objetos
+        const objetos = [...nomes,{
+            nome:'Mateus'
+        }]
+
+        console.log(objetos)
+
+        // Rest
+        function testes(...numeros)
+        {
+            console.log(numeros)
+        }
+
+        testes(1,2,3,4,5,6,{nome: 'Mateus'}) // Passando como parâmetros mas ficam disponíveis em formato de array
+        testes([1,2,3,4,5,6,{nome: 'Mateus'}])
+
+    </script>
+    
+</body>
+</html>
