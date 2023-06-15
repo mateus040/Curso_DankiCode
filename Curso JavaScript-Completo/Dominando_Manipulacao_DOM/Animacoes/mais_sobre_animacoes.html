@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais sobre animações</title>
+</head>
+
+    <style>
+
+        .conteudo h2 span{
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .conteudo p{
+            overflow: hidden;
+            height: 10px;
+            transition: 1s;
+        }
+
+        .mostrar{
+            height: 200px !important;
+        }
+
+    </style>
+
+<body>
+
+    <div class="conteudo">
+        <h2>Título do Conteúdo <span>Ver mais!</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique porttitor dignissim. Praesent eu scelerisque magna. Donec ultricies venenatis tellus, ut luctus ante eleifend sit amet. Integer in lacinia magna, vel imperdiet est. Praesent a nibh sit amet dolor scelerisque mattis. Vivamus nibh eros, bibendum nec justo id, malesuada rhoncus tortor.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique porttitor dignissim. Praesent eu scelerisque magna. Donec ultricies venenatis tellus, ut luctus ante eleifend sit amet. Integer in lacinia magna, vel imperdiet est. Praesent a nibh sit amet dolor scelerisque mattis. Vivamus nibh eros, bibendum nec justo id, malesuada rhoncus tortor.
+        </p>
+    </div>
+
+    <script>
+
+        var span = document.querySelector('.conteudo span')
+
+        span.addEventListener('click',()=>{
+            var conteudo = document.querySelector('.conteudo p')
+
+            // Verificando se existe a classe mostrar
+            if (conteudo.classList.contains('mostrar'))
+            {
+                span.innerHTML = 'Ver mais!' // Alterando valor
+                conteudo.classList.remove('mostrar') // Removendo o mostrar
+            }
+            else
+            {
+                span.innerHTML = 'Ocultar!' // Alterando valor
+                conteudo.classList.add('mostrar') // Adicionando o mostrar
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
