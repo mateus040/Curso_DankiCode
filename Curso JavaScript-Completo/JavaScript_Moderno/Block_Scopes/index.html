@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scopes</title>
+</head>
+<body>
+
+    <script>
+
+        // Código acessível apenas dentro das chaves
+        {
+            // Vai ficar definido apenas neste scopo
+            let nome = 'Mateus'
+
+            let testes = function teste()
+            {
+                console.log('olá')
+            }
+
+            testes();
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
