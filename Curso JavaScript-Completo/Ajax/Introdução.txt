@@ -1,0 +1,9 @@
+Ajax
+
+Conceitos:
+- Requisições depois da página ter finalizado seu carregamento;
+- Não é necessário atualizar a página;
+
+Como utilizar:
+- Através de funções do JavaScript -> Fetch(), XMLHttpRequest(), etc...;
+- Atualmente é muito mais fácil do que antigamente;
