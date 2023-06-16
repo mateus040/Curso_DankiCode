@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisição com Fetch</title>
+</head>
+<body>
+    
+    <script>
+
+        // Irá retornar a mesma coisa que o Ajax tradicional
+        //fetch('https://jsonplaceholder.typicode.com/todos/1').then(response=> response.json()).then(json=>console.log(json))
+
+        // Fazendo um cadastro, ou seja, mandando POST com os seguintes valores
+        fetch('https://jsonplaceholder.typicode.com/posts',{
+            method:'POST',
+            body: JSON.stringify({ // Convertendo
+                title:'Danki Code',
+                body:'Meu conteúdo',
+                userId: 10
+            }), 
+            headers:{
+                'Content-Type': 'application/json; charset=UTF-8'
+            }
+
+        }).then(response=> response.json()).then(json=>console.log(json))
+
+    </script>
+    
+</body>
+</html>
