@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Supermercado</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header{
+            background-color: #5a71bb;
+            text-align: center;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .lista-cadastro{
+            display: flex;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+
+        .lista-cadastro input[type=text]{
+            flex: 1;
+            height: 40px;
+            padding-left: 20px;
+        }
+
+        .lista-produto-single{
+            padding: 10px 0;
+            margin: 20px 0;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+        }
+
+        .lista-produto-single h3{
+            flex: 10;
+            padding: 0 20px;
+        }
+
+        h3.price-produto{
+            text-align: right;
+            font-size: 17px;
+        }
+
+        h3.price-produto > span{
+            background-color: #5a71bb;
+            padding: 8px 10px;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .soma-produto{
+            margin: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h2>App Lista de Supermercado</h2>
+    </header>
+
+    <div class="lista-cadastro">
+        <input type="text" placeholder="Nome do produto..." name="nome_produto">
+        <input type="text" placeholder="Valor do produto..." name="valor_produto">
+        <input type="submit" name="acao" value="Cadastrar">
+    </div>
+
+    <div class="lista-produtos">
+        <div class="lista-produto-single">
+            <h3>RedBull</h3>
+            <h3 class="price-produto"><span>R$20,00</span></h3>
+        </div>
+
+        <div class="lista-produto-single">
+            <h3>RedBull</h3>
+            <h3 class="price-produto"><span>R$20,00</span></h3>
+        </div>
+
+        <div class="lista-produto-single">
+            <h3>RedBull</h3>
+            <h3 class="price-produto"><span>R$20,00</span></h3>
+        </div>
+
+        <div class="lista-produto-single">
+            <h3>RedBull</h3>
+            <h3 class="price-produto"><span>R$20,00</span></h3>
+        </div>
+        
+    </div>
+
+    <div class="soma-produto">
+        <h1>Total: R$100,00</h1>
+    </div>
+
+    <script>
+
+
+
+    </script>
+    
+</body>
+</html>
