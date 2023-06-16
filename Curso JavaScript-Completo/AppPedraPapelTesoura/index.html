@@ -29,6 +29,7 @@
 <body>
 
     <h1 style="text-align: center;">Pedra, Papel ou Tesoura!</h1>
+    <h2 style="text-align: center;" class="vencedor"></h2>
     <hr>
 
     <div class="align">
@@ -51,6 +52,73 @@
         var elementos = document.querySelectorAll('.player-options div > img')
         var playerOpt = ""
         var inimigoOpt = ""
+
+        // Validando vitória
+        function validarVitoria()
+        {
+
+            let vencedor = document.querySelector('.vencedor')
+
+            // Verificação papel
+            if (playerOpt == "papel")
+            {
+                if (inimigoOpt == "papel")
+                {
+                    // Empate
+                    vencedor.innerHTML = "O jogo foi empatado"
+                }
+                else if (inimigoOpt == "tesoura")
+                {
+                    // Inimigo ganhou
+                    vencedor.innerHTML = "O inimigo ganhou"
+                }
+                else if (inimigoOpt == "pedra")
+                {
+                    // Inimigo perdeu
+                    vencedor.innerHTML = "Você ganhou"
+                }
+            }
+
+            // Verificação tesoura
+            if (playerOpt == "tesoura")
+            {
+                if (inimigoOpt == "tesoura")
+                {
+                    // Empate
+                    vencedor.innerHTML = "O jogo foi empatado"
+                }
+                else if (inimigoOpt == "pedra")
+                {
+                    // Inimigo ganhou
+                    vencedor.innerHTML = "O inimigo ganhou"
+                }
+                else if (inimigoOpt == "papel")
+                {
+                    // Inimigo perdeu
+                    vencedor.innerHTML = "Você ganhou"
+                }
+            }
+
+            // Verificação pedra
+            if (playerOpt == "pedra")
+            {
+                if (inimigoOpt == "pedra")
+                {
+                    // Empate
+                    vencedor.innerHTML = "O jogo foi empatado"
+                }
+                else if (inimigoOpt == "papel")
+                {
+                    // Inimigo ganhou
+                    vencedor.innerHTML = "O inimigo ganhou"
+                }
+                else if (inimigoOpt == "tesoura")
+                {
+                    // Inimigo perdeu
+                    vencedor.innerHTML = "Você ganhou"
+                }
+            }
+        }
 
         // Resetando a opacidade dos inimigos
         function resetInimigo()
@@ -82,8 +150,7 @@
                 }
             }
 
-            //alert(playerOpt)
-            //alert(inimigoOpt)
+            validarVitoria()
         }
 
         // Resetando a opacidade
