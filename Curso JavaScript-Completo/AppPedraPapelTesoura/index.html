@@ -33,15 +33,15 @@
 
     <div class="align">
         <div class="player-options">
-            <div><img opt="rock" src="img/rock.png"></div>
-            <div><img opt="paper" src="img/paper.png"></div>
-            <div><img opt="scisor" src="img/scisor.png"></div>
+            <div><img opt="pedra" src="img/rock.png"></div>
+            <div><img opt="papel" src="img/paper.png"></div>
+            <div><img opt="tesoura" src="img/scisor.png"></div>
         </div>
 
         <div class="enemy-options">
-            <div><img src="img/rock.png"></div>
-            <div><img src="img/paper.png"></div>
-            <div><img src="img/scisor.png"></div>
+            <div><img opt="pedra" src="img/rock.png"></div>
+            <div><img opt="papel" src="img/paper.png"></div>
+            <div><img opt="tesoura" src="img/scisor.png"></div>
         </div>
     </div>
 
@@ -50,6 +50,41 @@
 
         var elementos = document.querySelectorAll('.player-options div > img')
         var playerOpt = ""
+        var inimigoOpt = ""
+
+        // Resetando a opacidade dos inimigos
+        function resetInimigo()
+        {
+            const enemyOptions = document.querySelectorAll('.enemy-options div')
+
+            for (var i  = 0; i < enemyOptions.length; i++)
+            {
+                // Ativando a opacidade da imagem do inimigo
+                enemyOptions[i].childNodes[0].style.opacity = 0.3
+            }
+        }
+
+        // Função do inimigo
+        function inimigoJogar()
+        {
+            let rand = Math.floor(Math.random()*3) // Retornando um número entre 0 e 1 e multiplicando por 3
+
+            const enemyOptions = document.querySelectorAll('.enemy-options div')
+            resetInimigo()
+            
+            for (var i  = 0; i < enemyOptions.length; i++)
+            {
+                if (i == rand)
+                {
+                    // Ativando a opacidade da imagem do inimigo
+                    enemyOptions[i].childNodes[0].style.opacity = 1
+                    inimigoOpt = enemyOptions[i].childNodes[0].getAttribute('opt')
+                }
+            }
+
+            //alert(playerOpt)
+            //alert(inimigoOpt)
+        }
 
         // Resetando a opacidade
         function resetOpacityPlayer() 
@@ -68,7 +103,7 @@
                 t.target.style.opacity = 1 // Alterando a opacidade
                 playerOpt = t.target.getAttribute('opt') // Selecionando o item que o player vai jogar
 
-                alert(playerOpt)
+                inimigoJogar()
             })
         }
 
