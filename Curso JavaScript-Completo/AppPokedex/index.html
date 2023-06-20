@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!--App está utilizando uma API para buscar os Pokemons-->
-    
+
     <div class="main">
         <h2>Pokedex</h2>
-
+        <br>
+        <input id="quantidade" style="width: 100%; height: 40px; padding-left: 10px;" type="number" name="quantidade" placeholder="Insira a quantidade de Pokemons...">
         <div class="pokemon-boxes">
 
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
-                <p>Dito</p>
-            </div>
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
-                <p>Dito</p>
-            </div>
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
-                <p>Dito</p>
-            </div>
 
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
-                <p>Dito</p>
-            </div>
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
-                <p>Dito</p>
-            </div>
-            <div class="pokemon-box">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
-                <p>Dito</p>
-            </div>
 
         </div>
     </div>
 
     <script>
-        // Recuperando 10 Pokemons
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
-        .then(response => response.json())
-        .then(allpokemon => {
 
-            var pokemons = [];
-
-            // Buscando o nome do pokemon e a imagem
-            allpokemon.results.map((val) => {
-
-                fetch(val.url)
-                .then(response => response.json())
-                .then(pokemonSingle => {
-                    pokemons.push({nome:val.name, imagem:pokemonSingle.sprites.front_default})
-
-                    // Verificando se fora retornados os 10 Pokemons
-                    if(pokemons.length == 10)
-                    {
-                        // Finalizamos nossas requisições
-
-                        console.log(pokemons)
-                    }
-                })
-            })
-
-            // Retornando o nome
-            pokemons.map((val) =>{
-                console.log(val.nome)
-            })
-
+        // Função para estabelecer a quantidade de Pokemons a serem buscados
+        var quantidade = document.getElementById('quantidade');
+        quantidade.addEventListener('keyup',()=>{
+            pegaPokemons(quantidade.value)
         })
+
+        pegaPokemons();
+
+        function pegaPokemons(quantidade) {
+            // Recuperando 10 Pokemons
+            fetch('https://pokeapi.co/api/v2/pokemon?limit='+quantidade)
+                .then(response => response.json())
+                .then(allpokemon => {
+
+                    var pokemons = [];
+
+                    // Buscando o nome do pokemon e a imagem
+                    allpokemon.results.map((val) => {
+
+                        fetch(val.url)
+                            .then(response => response.json())
+                            .then(pokemonSingle => {
+                                pokemons.push({ nome: val.name, imagem: pokemonSingle.sprites.front_default })
+
+                                // Verificando se foram retornados os Pokemons
+                                if (pokemons.length == quantidade) {
+                                    // Finalizamos nossas requisições
+
+                                    var pokemonBoxes = document.querySelector('.pokemon-boxes')
+                                    pokemonBoxes.innerHTML = "" // Deixando vazio
+
+                                    // Adicionando na página HTML
+                                    pokemons.map(function (val) {
+                                        pokemonBoxes.innerHTML += `
+                            <div class="pokemon-box">
+                                <img src="`+ val.imagem + `">
+                                <p>`+ val.nome + `</p>
+                            </div>
+                            `;
+
+                                    })
+                                }
+                            })
+                    })
+
+                    // Retornando o nome
+                    pokemons.map((val) => {
+                        console.log(val.nome)
+                    })
+
+                })
+        }
+
     </script>
-    
+
 </body>
+
 </html>
