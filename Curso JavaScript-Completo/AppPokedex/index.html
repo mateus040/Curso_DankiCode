@@ -48,7 +48,34 @@
         // Recuperando 10 Pokemons
         fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
         .then(response => response.json())
-        .then(allpokemon => console.log(allpokemon))
+        .then(allpokemon => {
+
+            var pokemons = [];
+
+            // Buscando o nome do pokemon e a imagem
+            allpokemon.results.map((val) => {
+
+                fetch(val.url)
+                .then(response => response.json())
+                .then(pokemonSingle => {
+                    pokemons.push({nome:val.name, imagem:pokemonSingle.sprites.front_default})
+
+                    // Verificando se fora retornados os 10 Pokemons
+                    if(pokemons.length == 10)
+                    {
+                        // Finalizamos nossas requisições
+
+                        console.log(pokemons)
+                    }
+                })
+            })
+
+            // Retornando o nome
+            pokemons.map((val) =>{
+                console.log(val.nome)
+            })
+
+        })
     </script>
     
 </body>
