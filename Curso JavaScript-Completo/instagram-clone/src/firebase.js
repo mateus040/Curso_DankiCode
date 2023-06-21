@@ -3,8 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
+import "firebase/compat/storage";
 import 'firebase/compat/auth';
-import 'firebase/compat/storage';
 import 'firebase/compat/functions';
 
 
@@ -25,7 +25,7 @@ const analytics = getAnalytics(app);
 
 const db = firebase.firestore(); // Database em tempo real
 const auth = firebase.auth();
-const storage = firebase.storage(); // Upload de arquivos
+const storage = firebase.storage();
 const functions = firebase.functions();
 
 export { db, auth, storage, functions };
