@@ -6,7 +6,7 @@ import Header from './Header';
 function App() {
 
   // Para saber qual tela mostrar para o usuário
-  const [user, setUser] = useState('Mateus');
+  const [user, setUser] = useState();
 
   useEffect(() => {
 
