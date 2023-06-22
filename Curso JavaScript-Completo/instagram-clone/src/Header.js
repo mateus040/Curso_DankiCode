@@ -46,11 +46,12 @@ function Header(props) {
         auth.signInWithEmailAndPassword(email, senha)
             .then((auth) => {
                 props.setUser(auth.user.displayName);
-                alert('Logado com sucesso!')
-
+                alert('Logado com sucesso!');
+                window.location.href = "/";
             }).catch((err) => {
-                alert(err.message)
+                alert(err.message);
             })
+
     }
 
 
@@ -87,43 +88,53 @@ function Header(props) {
         modal.style.display = "none";
     }
 
+    // Função deslogar
+    function deslogar(e) {
+        e.preventDefault();
+        auth.signOut().then(function (val) {
+            props.setUser(null);
+            window.location.href = "/";
+        })
+    }
+
     // Função para fazer Upload
     function uploadPost(e) {
         e.preventDefault();
-        
+
         let tituloPost = document.getElementById('titulo-upload').value;
 
         // Criando uma referência para a pasta image
         const uploadTask = storage.ref(`images/${file.name}`).put(file);
 
-        uploadTask.on("state_changed",function(snapshot){
+        uploadTask.on("state_changed", function (snapshot) {
             const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             setProgress(progress);
-        }, function(error){
+        }, function (error) {
 
-        }, function(){
+        }, function () {
 
             storage.ref("images").child(file.name).getDownloadURL()
-            .then(function(url){
-                db.collection('posts').add({
-                    titulo: tituloPost,
-                    image: url,
-                    userName: props.user,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                .then(function (url) {
+                    db.collection('posts').add({
+                        titulo: tituloPost,
+                        image: url,
+                        userName: props.user,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    })
+
+                    // Zerando o progresso e o arquivo
+                    setProgress(0);
+                    setFile(null);
+
+                    alert('Upload Realizado com Sucesso!');
+
+                    // Resetando o formulário
+                    document.getElementById('form-upload').reset();
+                    fecharModalUpload();
                 })
 
-                // Zerando o progresso e o arquivo
-                setProgress(0);
-                setFile(null);
-
-                alert('Upload Realizado com Sucesso!');
-
-                // Resetando o formulário
-                document.getElementById('form-upload').reset();
-            })
-            
         })
-        
+
     }
 
     return (
@@ -166,6 +177,7 @@ function Header(props) {
                         <div className='header__logadoInfo'>
                             <span>Olá <b>{props.user}</b></span>
                             <a href='#' onClick={(e) => abrirModalUpload(e)}>Postar!</a>
+                            <a onClick={(e) => deslogar(e)}>Deslogar</a>
                         </div>
                         :
                         // Caso não esteja logado ...

@@ -1,5 +1,5 @@
 import './App.css';
-import { db } from './firebase.js';
+import { db, auth } from './firebase.js';
 import { useEffect, useState } from 'react';
 import Header from './Header';
 import Post from './Post';
@@ -9,18 +9,25 @@ function App() {
   // Para saber qual tela mostrar para o usuário
   const [user, setUser] = useState();
 
-  const [posts,setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+
+    // Configurando login
+    auth.onAuthStateChanged(function (val) {
+      if (val != null) {
+        setUser(val.displayName);
+      }
+    })
 
     // Método para atualizar em tempo real a aplicação
 
     // Ordenando o timestamp em ordem decrescente
-    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot)=>{
-      setPosts(snapshot.docs.map((document)=>{
-        return {id:document.id,info:document.data()} // Atualizando de forma automática
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
+      setPosts(snapshot.docs.map((document) => {
+        return { id: document.id, info: document.data() } // Atualizando de forma automática
       }))
-    }) 
+    })
 
   }, [])
 
@@ -36,9 +43,8 @@ function App() {
         posts.map(function(val){
 
             return (
-
-                <Post user={user} info={val.info} id={val.id} />
               
+                <Post user={user} info={val.info} id={val.id} />             
             )
 
         })
