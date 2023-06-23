@@ -1,3 +1,0 @@
-Passo a passo para criar o projeto:
-- Dentro da pasta do projeto executar: npm init
-- npm install express
