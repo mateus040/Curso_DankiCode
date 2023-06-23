@@ -4,3 +4,4 @@ Passo a passo para criar o projeto:
 - npm install express
 - npm install ejs
 - Inicializar o server: nodemon index.js
+- npm install body-parse
