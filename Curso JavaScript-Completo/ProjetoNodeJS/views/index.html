@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App</title>
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
     
-    <h2>Olá <%= nome %></h2>
+    <div class="tarefas">
+
+        <% for(let i = 0; i < tarefasList.length; i++){ %>
+
+            <!--Mostrando as tarefas estabelecidas no arquivo index.js-->
+            <p><%= tarefasList[i] %> | <a href="/deletar/<%= i %>">X</a></p>
+
+        <% } %>
+    </div>
 
 </body>
 </html>

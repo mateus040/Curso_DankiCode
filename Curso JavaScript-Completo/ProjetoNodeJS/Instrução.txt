@@ -3,4 +3,4 @@ Passo a passo para criar o projeto:
 - Dentro da pasta do projeto executar: npm init
 - npm install express
 - npm install ejs
-- Executar o server: nodemon index.js
+- Inicializar o server: nodemon index.js
