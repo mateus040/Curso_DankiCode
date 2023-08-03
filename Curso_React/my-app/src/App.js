@@ -1,10 +1,10 @@
 import './App.css';
+import Header from './Header'; // Importando componente Header
 
 function App(props) {
   return (
     <div className="App">
-      <h2>{props.texto.chamada}</h2>
-      <p>{props.texto.chamada2}</p>
+      <Header />
     </div>
   );
 }
