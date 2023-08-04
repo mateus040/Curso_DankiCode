@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react";
+import Api from './Api';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [nome, setNome] = useState('João');
+  
+  const [nomes, setNomes] = useState([]);
 
-  function callAlert(){
+  async function initApi(){
+
+    let pegaNomes = await Api.getPersons();
+    setNomes(pegaNomes);
 
   }
 
   useEffect(() => {
-     
-  },[]);
+    
+    initApi();
+
+  }, []);
 
   return (
     <div>
       {
-        (nome == "Mateus")?
-        <div>
-          <p>{nome}</p>
-        </div>:
-
-        <div>
-          <p>Ops eu preciso do nome Mateus.</p>
-        </div>
+        nomes.map(function(data) {
+          return (
+            <div>
+              <h2>{data.name} | {data.email}</h2>
+            </div>
+          )
+        })
       }
     </div>
   )
