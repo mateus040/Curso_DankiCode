@@ -1,23 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [nome, setNome] = useState("Joao");
-  const [numeros, setNumeros] = useState([1,2,3,4,5,6]);
-  const [obj, setObj] = useState({nome:'Mateus', idade:'17'});
+
+  useEffect(() => {
+    // Atualiza o título do documento usando a API do browser
+    document.title = `Você clicou ${count} vezes`;
+  },[]);
 
   return (
     <div>
-{
-  numeros.map(function(val){
-    return(
-      <p>{val}</p>
-    )
-  })
-}
-      <p>{nome}</p>
-      <button onClick={() => setNome("Mateus")}>
-        Click me
+      <p>Você clicou {count} vezes</p>
+      <button onClick={() => setCount(count + 1)}>
+        Clique aqui
       </button>
     </div>
   )
