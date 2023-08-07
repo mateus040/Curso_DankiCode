@@ -24,10 +24,10 @@ function Search() {
                 const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
 
                 setCidade(`
-                <div>
-                    <p>${main.temp}</p>
-                    <p>${sys.country}</p>
-                    <p>${name}</p>
+                <div class="containerCidade">
+                    <p>Temperatura: ${main.temp}</p>
+                    <p>País: ${sys.country}</p>
+                    <p>Cidade: ${name}</p>
                     <p>${weather[0]['description']}</p>
                     <img src="${icon}" />
                 </div>
@@ -54,7 +54,7 @@ function Search() {
             {
                 (cidade != "")?
                 <div dangerouslySetInnerHTML={{__html: cidade}} />:
-                <div>Pesquise por algo acima...</div>
+                <div style={{padding:'8px'}}>Pesquise por algo acima...</div>
             }
 
         </div>

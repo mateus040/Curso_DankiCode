@@ -22,10 +22,22 @@
 }
 
 .search input[type='submit']{
-  margin-left: 10px;
+  width: 80%;
   height: 40px;
-  background-color: #fff;
-  border: 2px solid #000;
-  padding: 5px;
   cursor: pointer;
+  margin: 10px 0;
+  background-color: #e7426b;
+  color: #fff;
+  border: 0;
+  font-weight: bold;
+}
+
+.containerCidade{
+  text-align: center;
+}
+
+.containerCidade p{
+  border-bottom: 1px dashed #ccc;
+  padding: 10px 0;
+  font-weight: bold;
 }
